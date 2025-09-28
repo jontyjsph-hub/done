@@ -28,14 +28,23 @@ export default function ScrollToTop() {
       {isVisible && (
         <motion.button
           initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            y: [0, -5, 0], // merged y animation here
+          }}
           exit={{ opacity: 0, scale: 0.5 }}
           whileHover={{ scale: 1.1, y: -5 }}
           whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
           className="fixed bottom-8 right-8 z-40 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white p-3 rounded-full shadow-lg glow-blue"
-          animate={{ y: [0, -5, 0] }}
-          transition={{ y: { duration: 2, repeat: Infinity, ease: "easeInOut" } }}
+          transition={{
+            y: {
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            },
+          }}
         >
           <ChevronUp className="w-6 h-6" />
         </motion.button>
