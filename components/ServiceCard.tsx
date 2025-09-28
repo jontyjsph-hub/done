@@ -5,7 +5,7 @@ import { Video as LucideIcon } from 'lucide-react';
 
 interface ServiceCardProps {
   service: {
-    icon: LucideIcon;
+    icon: typeof LucideIcon;
     title: string;
     description: string;
     features: string[];
